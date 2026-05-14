@@ -1,0 +1,6 @@
+# 업그레이드 가능하면 부모 아이템, 아니면 루트 아이템
+SELECT Info.ITEM_ID, Info.ITEM_NAME
+FROM ITEM_INFO Info JOIN ITEM_TREE Tree
+ON Info.ITEM_ID = Tree.ITEM_ID
+WHERE Tree.PARENT_ITEM_ID is NULL
+ORDER BY ITEM_ID ASC;
